@@ -33,6 +33,7 @@
                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                 <color key="maximumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <action selector="redSliderValueColor" destination="BYZ-38-t0r" eventType="valueChanged" id="ayl-wS-Icn"/>
                                     <action selector="rgbSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="EKc-LZ-9WN"/>
                                 </connections>
                             </slider>
@@ -56,6 +57,7 @@
                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                 <color key="maximumTrackTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <action selector="greenSliderValueColor" destination="BYZ-38-t0r" eventType="valueChanged" id="AIa-C5-21x"/>
                                     <action selector="rgbSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="hzh-xu-OKK"/>
                                 </connections>
                             </slider>
@@ -79,6 +81,7 @@
                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                 <color key="maximumTrackTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <action selector="blueSliderValueColor" destination="BYZ-38-t0r" eventType="valueChanged" id="Bbw-eu-u2v"/>
                                     <action selector="rgbSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="ZB5-gl-EnA"/>
                                 </connections>
                             </slider>
@@ -109,14 +112,11 @@
                     <connections>
                         <outlet property="blueSlider" destination="5de-C7-hXx" id="Bqm-Qd-EYs"/>
                         <outlet property="blueSliderValue" destination="eih-xZ-76A" id="Wjc-IW-UEk"/>
-                        <outlet property="blueTextLabel" destination="LwK-4c-FiW" id="Z1u-tU-efa"/>
                         <outlet property="displayColorLabel" destination="gel-kT-gz4" id="iqM-v8-byE"/>
-                        <outlet property="greenSlider" destination="S40-MF-CjN" id="1R1-dc-nCr"/>
+                        <outlet property="greenSlider" destination="S40-MF-CjN" id="db1-Io-9d7"/>
                         <outlet property="greenSliderValue" destination="vFY-NM-MJB" id="Fnz-7u-czP"/>
-                        <outlet property="greenTextSlider" destination="v3f-dg-VpA" id="Q45-1v-usy"/>
                         <outlet property="redSlider" destination="B70-tq-d5H" id="qpa-AZ-GQX"/>
                         <outlet property="redSliderValue" destination="S19-TT-h1A" id="V74-gG-wrX"/>
-                        <outlet property="redTextLabel" destination="JkV-Ib-LQx" id="f45-jj-aWx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

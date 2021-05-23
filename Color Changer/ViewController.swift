@@ -12,21 +12,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayColorLabel: UILabel!
     
     @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var redTextLabel: UILabel!
     @IBOutlet weak var redSliderValue: UILabel!
     
     @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var greenTextSlider: UILabel!
     @IBOutlet weak var greenSliderValue: UILabel!
     
     @IBOutlet weak var blueSlider: UISlider!
-    @IBOutlet weak var blueTextLabel: UILabel!
     @IBOutlet weak var blueSliderValue: UILabel!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        redSlider.minimumTrackTintColor = .red
+        greenSlider.minimumTrackTintColor = .green
+        blueSlider.minimumTrackTintColor = .blue
     }
 
     func colorTheLabel () {
@@ -37,6 +37,18 @@ class ViewController: UIViewController {
         colorTheLabel()
     }
     
-
+    
+    @IBAction func redSliderValueColor() {
+        redSliderValue.text = String (redSlider.value)
+    }
+    
+    @IBAction func greenSliderValueColor() {
+        greenSliderValue.text = String (greenSlider.value)
+    }
+    
+    
+    @IBAction func blueSliderValueColor() {
+        blueSliderValue.text = String (blueSlider.value)
+    }
 }
 
