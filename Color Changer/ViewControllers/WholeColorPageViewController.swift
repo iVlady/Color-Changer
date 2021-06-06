@@ -7,13 +7,17 @@
 
 import UIKit
 
-class WholeColorPageViewController: UIViewController {
+class WholeColorPageViewController: UIViewController, ColorChangable {
+    func update(color: UIColor) {
+    }
+
+    
+    @IBOutlet weak var wholeBackground: UIView!
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
-
 }

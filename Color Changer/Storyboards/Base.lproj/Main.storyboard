@@ -32,13 +32,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R9r-kV-ekv">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil.tip" catalog="system" id="Yty-fA-9LF">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="paintbrush.fill" catalog="system" id="Yty-fA-9LF">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="9Em-Nv-ZqU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="wholeBackground" destination="Zma-F4-d6B" id="NV4-Ar-ZTm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U36-P1-vtx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,7 +184,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pencil.tip" catalog="system" width="99" height="128"/>
+        <image name="paintbrush.fill" catalog="system" width="122" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

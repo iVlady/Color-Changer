@@ -7,13 +7,20 @@
 
 import UIKit
 
-//protocol passBackgroundColor {
-//    func newColor () {
-//
-//    }
-//}
+protocol ColorChangable {
+    func update (color: UIColor)
 
-class ViewController: UIViewController {
+}
+
+class ViewController: UIViewController, ColorChangable {
+    func update(color: UIColor) {
+//        wholeColorPageVC.wholeBackground.backgroundColor = displayColorLabel.backgroundColor
+    }
+    
+    var delegate: ColorChangable?
+    let wholeColorPageVC = WholeColorPageViewController()
+    
+    
     
     @IBOutlet weak var displayColorLabel: UILabel!
     
@@ -33,16 +40,26 @@ class ViewController: UIViewController {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
+     
+        
+        
+    }
+    
+    private func colorForAnotherVC () {
+        
     }
 
     func colorTheLabel () {
-        displayColorLabel.backgroundColor = UIColor (red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        displayColorLabel.backgroundColor = UIColor (red: CGFloat(redSlider.value),
+                                                     green: CGFloat(greenSlider.value),
+                                                     blue: CGFloat(blueSlider.value),
+                                                     alpha: 1)
     }
     
     @IBAction func rgbSlider() {
         colorTheLabel()
-    
     }
+    
     
     @IBAction func redSliderValueColor() {
         redSliderValue.text = String (format: "%.2f", redSlider.value)
