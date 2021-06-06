@@ -7,6 +7,12 @@
 
 import UIKit
 
+//protocol passBackgroundColor {
+//    func newColor () {
+//
+//    }
+//}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var displayColorLabel: UILabel!
@@ -35,6 +41,7 @@ class ViewController: UIViewController {
     
     @IBAction func rgbSlider() {
         colorTheLabel()
+    
     }
     
     @IBAction func redSliderValueColor() {
