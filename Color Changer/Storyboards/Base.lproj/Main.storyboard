@@ -34,13 +34,14 @@
                     <navigationItem key="navigationItem" id="R9r-kV-ekv">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="paintbrush.fill" catalog="system" id="Yty-fA-9LF">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="9Em-Nv-ZqU"/>
+                                <action selector="barButton:" destination="gRA-nG-EPU" id="XWf-W4-k05"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="wholeBackground" destination="Zma-F4-d6B" id="NV4-Ar-ZTm"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toChanger" id="yTM-S1-cCK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U36-P1-vtx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

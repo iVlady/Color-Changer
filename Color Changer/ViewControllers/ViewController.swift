@@ -7,20 +7,16 @@
 
 import UIKit
 
-protocol ColorChangable {
+protocol ColorChangable: AnyObject {
     func update (color: UIColor)
 
 }
 
 class ViewController: UIViewController, ColorChangable {
     func update(color: UIColor) {
-//        wholeColorPageVC.wholeBackground.backgroundColor = displayColorLabel.backgroundColor
     }
     
-    var delegate: ColorChangable?
-    let wholeColorPageVC = WholeColorPageViewController()
-    
-    
+    weak var delegate: ColorChangable?
     
     @IBOutlet weak var displayColorLabel: UILabel!
     
@@ -40,12 +36,7 @@ class ViewController: UIViewController, ColorChangable {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
-     
         
-        
-    }
-    
-    private func colorForAnotherVC () {
         
     }
 
@@ -58,6 +49,7 @@ class ViewController: UIViewController, ColorChangable {
     
     @IBAction func rgbSlider() {
         colorTheLabel()
+        delegate?.update(color: displayColorLabel.backgroundColor ?? .black)
     }
     
     
@@ -70,5 +62,7 @@ class ViewController: UIViewController, ColorChangable {
     @IBAction func blueSliderValueColor() {
         blueSliderValue.text = String (format: "%.2f", blueSlider.value)
     }
+    
+
 }
 
