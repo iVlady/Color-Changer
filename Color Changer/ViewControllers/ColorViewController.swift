@@ -7,16 +7,7 @@
 
 import UIKit
 
-protocol ColorChangable: AnyObject {
-    func update (color: UIColor)
-
-}
-
-class ViewController: UIViewController, ColorChangable {
-    func update(color: UIColor) {
-    }
-    
-    weak var delegate: ColorChangable?
+class ColorViewController: UIViewController {
     
     @IBOutlet weak var displayColorLabel: UILabel!
     
@@ -29,6 +20,8 @@ class ViewController: UIViewController, ColorChangable {
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var blueSliderValue: UILabel!
     
+    var viewColor: UIColor!
+    weak var delegate: ColorChangable!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +30,7 @@ class ViewController: UIViewController, ColorChangable {
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .blue
         
+        displayColorLabel.backgroundColor = viewColor
         
     }
 
@@ -47,10 +41,16 @@ class ViewController: UIViewController, ColorChangable {
                                                      alpha: 1)
     }
     
+    
     @IBAction func rgbSlider() {
         colorTheLabel()
-        delegate?.update(color: displayColorLabel.backgroundColor ?? .black)
     }
+    
+    @IBAction func saveButtonPressed() {
+        delegate?.update(viewColor ?? .white)
+        dismiss(animated: true)
+    }
+    
     
     
     @IBAction func redSliderValueColor() {

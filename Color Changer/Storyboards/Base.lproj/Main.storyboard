@@ -9,55 +9,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--WholeColorPage-->
+        <!--MainViewController-->
         <scene sceneID="lBH-gr-NaH">
             <objects>
-                <viewController title="WholeColorPage" id="gRA-nG-EPU" customClass="WholeColorPageViewController" customModule="Color_Changer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="MainViewController" id="gRA-nG-EPU" customClass="MainViewController" customModule="Color_Changer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M2E-ae-I1q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zma-F4-d6B" userLabel="WholeBackground">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1Jk-5d-BZ3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Zma-F4-d6B" firstAttribute="leading" secondItem="1Jk-5d-BZ3" secondAttribute="leading" id="2WM-XY-2BJ"/>
-                            <constraint firstItem="1Jk-5d-BZ3" firstAttribute="trailing" secondItem="Zma-F4-d6B" secondAttribute="trailing" id="9RG-Ys-zfo"/>
-                            <constraint firstItem="Zma-F4-d6B" firstAttribute="top" secondItem="1Jk-5d-BZ3" secondAttribute="top" id="n0S-v3-rru"/>
-                            <constraint firstItem="1Jk-5d-BZ3" firstAttribute="bottom" secondItem="Zma-F4-d6B" secondAttribute="bottom" id="wgS-h4-cAL"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R9r-kV-ekv">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="paintbrush.fill" catalog="system" id="Yty-fA-9LF">
                             <connections>
-                                <action selector="barButton:" destination="gRA-nG-EPU" id="XWf-W4-k05"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="s1C-Is-teX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="wholeBackground" destination="Zma-F4-d6B" id="NV4-Ar-ZTm"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toChanger" id="yTM-S1-cCK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U36-P1-vtx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="231.8840579710145" y="93.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Color View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Color_Changer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ColorViewController" customModule="Color_Changer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KP-18-aOz" userLabel="displayColorLabel">
-                                <rect key="frame" x="20" y="10" width="374" height="194"/>
+                                <rect key="frame" x="20" y="54" width="374" height="194"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5KP-18-aOz" secondAttribute="height" multiplier="187:97" id="VVR-uX-QB0"/>
@@ -138,6 +122,15 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v2-37-XCK">
+                                <rect key="frame" x="189" y="532" width="37" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="N8h-z3-am9"/>
+                                    <segue destination="mBL-ri-nHo" kind="unwind" unwindAction="saveButtonWithUnwindSegue:" id="51h-qV-brJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.09330856055021286" green="0.29178813099861145" blue="0.51948106288909912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -159,8 +152,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="mBL-ri-nHo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1200" y="94"/>
+            <point key="canvasLocation" x="1198.5507246376812" y="93.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Uif-gS-FEh">
