@@ -9,6 +9,9 @@ import UIKit
 
 class ColorViewController: UIViewController {
     
+    
+    @IBOutlet weak var redNumberValue: UITextField!
+    
     @IBOutlet weak var displayColorLabel: UILabel!
     
     @IBOutlet weak var redSlider: UISlider!
@@ -32,8 +35,11 @@ class ColorViewController: UIViewController {
         
         displayColorLabel.backgroundColor = viewColor
         
+//        redSlider.value = redNumberValue.text
     }
-
+    
+    
+    
     func colorTheLabel () {
         displayColorLabel.backgroundColor = UIColor (red: CGFloat(redSlider.value),
                                                      green: CGFloat(greenSlider.value),
@@ -47,11 +53,9 @@ class ColorViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed() {
-        delegate?.update(viewColor ?? .white)
+        delegate?.update(displayColorLabel.backgroundColor ?? .white)
         dismiss(animated: true)
     }
-    
-    
     
     @IBAction func redSliderValueColor() {
         redSliderValue.text = String (format: "%.2f", redSlider.value)
@@ -65,4 +69,3 @@ class ColorViewController: UIViewController {
     
 
 }
-

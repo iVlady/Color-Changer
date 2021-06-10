@@ -12,6 +12,9 @@ protocol ColorChangable: AnyObject {
 }
 
 class MainViewController: UIViewController {
+    
+    @IBOutlet weak var barButtonItem: UIBarButtonItem!
+    
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -20,17 +23,11 @@ class MainViewController: UIViewController {
         colorVC.viewColor = view.backgroundColor
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-
-    }
-
-    
 }
 
 extension MainViewController: ColorChangable {
     func update(_ color: UIColor) {
         view.backgroundColor = color
+        barButtonItem.tintColor = color
     }
 }

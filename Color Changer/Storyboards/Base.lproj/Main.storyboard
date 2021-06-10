@@ -27,6 +27,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="barButtonItem" destination="Yty-fA-9LF" id="6Rg-3b-4Yb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U36-P1-vtx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,6 +134,12 @@
                                     <segue destination="mBL-ri-nHo" kind="unwind" unwindAction="saveButtonWithUnwindSegue:" id="51h-qV-brJ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOv-h9-u7r">
+                                <rect key="frame" x="235" y="443" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.09330856055021286" green="0.29178813099861145" blue="0.51948106288909912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -147,6 +156,7 @@
                         <outlet property="displayColorLabel" destination="5KP-18-aOz" id="9bP-ko-otQ"/>
                         <outlet property="greenSlider" destination="S40-MF-CjN" id="db1-Io-9d7"/>
                         <outlet property="greenSliderValue" destination="vFY-NM-MJB" id="Fnz-7u-czP"/>
+                        <outlet property="redNumberValue" destination="OOv-h9-u7r" id="q9Z-vO-cX3"/>
                         <outlet property="redSlider" destination="B70-tq-d5H" id="qpa-AZ-GQX"/>
                         <outlet property="redSliderValue" destination="S19-TT-h1A" id="V74-gG-wrX"/>
                     </connections>
