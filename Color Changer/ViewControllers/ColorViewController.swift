@@ -35,7 +35,7 @@ class ColorViewController: UIViewController {
         
         displayColorLabel.backgroundColor = viewColor
         
-//        redSlider.value = redNumberValue.text
+
     }
     
     
@@ -53,7 +53,7 @@ class ColorViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed() {
-        delegate?.update(displayColorLabel.backgroundColor ?? .white)
+        delegate?.update(displayColorLabel.backgroundColor ?? .black)
         dismiss(animated: true)
     }
     
@@ -67,5 +67,13 @@ class ColorViewController: UIViewController {
         blueSliderValue.text = String (format: "%.2f", blueSlider.value)
     }
     
-
 }
+
+extension ColorViewController {
+//
+//    private func setValue () {
+//        redNumberValue.text = String(Float(redSlider.value))
+//    }
+}
+
+
